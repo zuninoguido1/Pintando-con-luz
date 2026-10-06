@@ -75,6 +75,21 @@ export default function Page() {
           <p style={{ marginTop: 14, fontSize: 13, color: "#888" }}>
             Completá el formulario — te respondemos a la brevedad
           </p>
+
+          <div style={{ marginTop: 52, width: "min(1100px, calc(100% - 48px))", margin: "52px auto 0" }}>
+            <img
+              src="/gaviota.jpg"
+              alt="Fotografía del taller"
+              style={{
+                width: "100%",
+                borderRadius: 24,
+                boxShadow: shadowLg,
+                aspectRatio: "21/8",
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
+          </div>
         </div>
       </header>
 
