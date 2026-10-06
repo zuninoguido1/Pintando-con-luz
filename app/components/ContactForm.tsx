@@ -114,7 +114,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 40px" }}>
+      <div className="form-row">
         <div style={{ marginBottom: 32 }}>
           <label style={labelStyle}>
             Nombre y apellido <span style={{ color: "#e88b4a" }}>*</span>

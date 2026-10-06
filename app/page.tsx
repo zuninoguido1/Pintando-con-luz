@@ -25,11 +25,11 @@ export default function Page() {
       </div>
 
       {/* HERO */}
-      <header style={{ padding: "72px 0 80px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+      <header style={{ padding: "60px 0 72px", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div style={{
-          position: "absolute", top: -180, left: "50%", transform: "translateX(-50%)",
-          width: 640, height: 640, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,138,0,0.36) 0%, rgba(255,138,0,0.14) 42%, transparent 72%)",
+          position: "absolute", top: -80, left: "50%", transform: "translateX(-50%)",
+          width: 500, height: 500, borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,138,0,0.30) 0%, rgba(255,138,0,0.10) 42%, transparent 72%)",
           pointerEvents: "none",
         }} />
 
@@ -95,7 +95,7 @@ export default function Page() {
           </p>
 
           {/* Galería */}
-          <div style={{ marginTop: 52, display: "flex", gap: 24, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 12 }}>
+          <div style={{ marginTop: 40, display: "flex", gap: 16, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 12, WebkitOverflowScrolling: "touch" } as React.CSSProperties}>
             {["gaviota.jpg", "huellas.jpg", "mar_roca.jpg", "atardecer.jpg"].map((img) => (
               <img
                 key={img}
@@ -107,7 +107,7 @@ export default function Page() {
           </div>
 
           {/* Info strip */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20, marginTop: 52 }}>
+          <div className="grid-info">
             {[
               { label: "¿Cuándo?", value: "Una vez por semana", sub: "4 clases por mes" },
               { label: "¿Dónde?", value: "Palermo Soho", sub: "Buenos Aires" },
@@ -136,7 +136,7 @@ export default function Page() {
             Lo que hace especial<br />a este espacio
           </h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 48 }}>
+          <div className="grid-benefits">
             {[
               { icon: "📸", title: "Fotografía como lenguaje", text: "Cada participante explora su propia forma de mirar el mundo. No hay respuestas correctas, hay miradas únicas." },
               { icon: "🤝", title: "Grupo y comunidad", text: "Un entorno social y artístico donde crear junto a otros, compartir y ser parte de algo. Grupos de hasta 5 personas." },
@@ -155,7 +155,7 @@ export default function Page() {
       {/* FOTOS */}
       <div style={{ padding: "0 0 88px" }}>
         <div style={{ width: "min(1100px, calc(100% - 48px))", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+          <div className="grid-photo-pair">
             <img src="/perro.jpg" alt="" style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 20, boxShadow: shadow, display: "block" }} />
             <img src="/sombras.jpg" alt="" style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", borderRadius: 20, boxShadow: shadow, display: "block" }} />
           </div>
@@ -165,7 +165,7 @@ export default function Page() {
       {/* BIO */}
       <section style={{ padding: "88px 0", background: "#fff", borderTop: "1px solid #e8e1da", borderBottom: "1px solid #e8e1da" }}>
         <div style={{ width: "min(1100px, calc(100% - 48px))", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "320px 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bio-grid">
             <img src="/foto-duena.jpeg" alt="Paloma Blanco Fernández" style={{ width: "100%", aspectRatio: "3/4", objectFit: "cover", borderRadius: 20, boxShadow: shadowLg, display: "block" }} />
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: "#e88b4a", marginBottom: 12 }}>
@@ -197,7 +197,7 @@ export default function Page() {
           <h2 style={{ fontSize: "clamp(28px, 3.6vw, 44px)", lineHeight: 1.1, margin: "0 0 40px", fontWeight: 800 }}>
             El taller en números
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
+          <div className="grid-trust">
             {[
               { num: "+10", label: "años de formación\nen fotografía" },
               { num: "4 años", label: "acompañando personas\ncon discapacidad" },
@@ -241,11 +241,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{
-            background: "#f4f0ec", border: "1px solid #e0d8d2",
-            borderRadius: 28, padding: "48px 52px",
-            boxShadow: shadowLg, maxWidth: 800, margin: "0 auto",
-          }}>
+          <div className="form-card">
             <ContactForm />
           </div>
         </div>
